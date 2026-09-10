@@ -39,8 +39,12 @@ If you are not sure, download **arm64-v8a**. If Android refuses to install it, d
 4. Go back and tap **Install**.
 
 This step exists for every app distributed outside the Play Store. Android is telling you where the
-file came from, not that anything is wrong with it. You can confirm you got the real file using
-[Verify your download](#verify-your-download) below.
+file came from, not that anything is wrong with it.
+
+**Download only from this Releases page or from
+[toolsmonk.com/download/android](https://toolsmonk.com/download/android).** Both are served over
+HTTPS and the website link points here. An APK for this app offered anywhere else did not come from
+us.
 
 **Requirements:** Android 7.0 (API level 24) or newer.
 
@@ -88,34 +92,6 @@ here or use [toolsmonk.com/download/android](https://toolsmonk.com/download/andr
 
 **Install a new version straight over the old one.** Your data is kept and there is no need to
 uninstall first.
-
-Every version since 1.8.1 is signed with the same certificate, which is what lets Android accept
-the update in place.
-
----
-
-## Verify your download
-
-Optional, and worth doing if you care where a sideloaded APK came from. With the Android SDK build
-tools installed:
-
-```bash
-apksigner verify --print-certs toolsmonk-1.9.0-arm64-v8a.apk
-```
-
-Every genuine ToolsMonk release reports:
-
-```
-SHA-256 digest: 0492c64a220822769492fd895325ede55a4153b7b4f3570c6bf1c7f9829672ad
-SHA-1 digest:   8fa7a2f8aa8fae5aca959b810a7546f185477157
-```
-
-The certificate name in that output reads `CN=Android Debug`. That is a historical label carried
-over when the signing certificate was preserved so existing installs could keep updating, and it
-does not mean you have a debug build. **The fingerprints above are what identify a genuine
-release**, not the name.
-
-If either fingerprint does not match, the file did not come from us. Do not install it.
 
 ---
 
